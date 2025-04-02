@@ -1,12 +1,12 @@
 import pandas as p, re
 
 class Contact_Manager:
-    def __init__(self,file="LogiQlink_Task_Data.csv",):
+    def __init__(self,file="LogiQlink_Task_Data.csv"):
         self.file = file
         self.data_set = self.load_csv()
     
     def validator(self, data, data_type="Email"):
-        pattern_of_email = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+        pattern_of_email = r'^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
         pattern_of_phone = r'^\d{10}$'
         if data_type == "Email":
             if re.match(pattern_of_email, data):
